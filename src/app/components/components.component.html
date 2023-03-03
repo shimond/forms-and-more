@@ -1,0 +1,42 @@
+<div [formGroup]="myForm">
+    <div>
+        <div> Name: </div>
+        <div>
+            <input type="text" formControlName="name" [disabled]="true">
+        </div>
+    </div>
+    <div>
+        <div> Age: </div>
+        <div>
+            <app-number-input formControlName="age"></app-number-input>
+        </div>
+    </div>
+    <div>
+        <h2>Home address</h2>
+        <app-address-input formControlName="homeAddress"></app-address-input>
+    </div>
+    <div>
+        <h2>Work address</h2>
+        <app-address-input formControlName="workAddress"></app-address-input>
+    </div>
+    <div>
+        <h2>Phones</h2>
+        <app-phones formControlName="phones"></app-phones>
+    </div>
+    <div>
+        <button [disabled]="myForm.invalid">Save</button>
+    </div>
+</div>
+<div>
+    <h2>Object Value</h2>
+    <pre>{{p| json}}</pre>
+</div>
+<div>
+    <h2>Form Value</h2>
+    <pre>{{myForm.value | json}}</pre>
+</div>
+
+<div>
+    <h2>Form RawValue (include disabled fields)</h2>
+    <pre>{{myForm.getRawValue() | json}}</pre>
+</div>

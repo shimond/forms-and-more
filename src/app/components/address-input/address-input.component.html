@@ -1,0 +1,26 @@
+<div [formGroup]="addressForm">
+    <div>
+        <div> Street: </div>
+        <div>
+            <input type="text" formControlName="street">
+        </div>
+    </div>
+    <div>
+        <div> City: </div>
+        <div>
+            <select formControlName="city"> 
+                <option>Jerusalem</option>
+                <option>Eilat</option>
+                <option>Ashdod</option>
+            </select>
+            <button>Add city</button>
+        </div>
+    </div>
+    
+    <div>
+        <div> Country: </div>
+        <div>
+            <input type="text" formControlName="country">
+        </div>
+    </div>
+</div>
