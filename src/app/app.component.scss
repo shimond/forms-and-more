@@ -1,0 +1,27 @@
+div {
+    flex-wrap: wrap;
+
+}
+
+.dov {
+    background-image: url('/assets/1.png');
+    background-size: cover;
+    display: flex;
+    text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+    color: white;
+    print-color-adjust: exact;
+    font-family: 'Alef';
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    font-size: 20pt;
+    border: 1px solid black;
+    text-align: center;
+    padding: 26px 10px;
+    margin: 10px;
+    page-break-inside: avoid;
+    width: 160px;
+    height: 200px;
+    border-radius: 9px;
+}

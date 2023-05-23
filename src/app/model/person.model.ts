@@ -4,7 +4,8 @@ export interface Person {
     age: number;
     homeAddress: Address;
     workAddress: Address;
-    phones: string[]
+    moreAddresses: Address[];
+    phones: string[];
 }
 
 export interface Address {

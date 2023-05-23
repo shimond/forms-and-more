@@ -1,0 +1,5 @@
+<div *ngFor="let item of addressArray.controls;let index=index">
+    <app-address-input [formControl]="item"></app-address-input>
+    <button (click)="removeItem(index)">Remove</button>
+</div>
+<button (click)="addItem()">Add Address</button>

@@ -5,6 +5,7 @@ import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators 
 import { NumberInputComponent } from './number-input/number-input.component';
 import { AddressInputComponent } from './address-input/address-input.component';
 import { PhonesComponent } from './phones/phones.component';
+import { AddressListInputComponent } from './address-list-input/address-list-input.component';
 
 @Component({
   selector: 'app-components',
@@ -13,6 +14,7 @@ import { PhonesComponent } from './phones/phones.component';
     CommonModule,
     NumberInputComponent,
     AddressInputComponent,
+    AddressListInputComponent,
     PhonesComponent,
     FormsModule,
     ReactiveFormsModule
@@ -27,8 +29,12 @@ export class ComponentsComponent implements OnInit {
     id: 1, name: 'David Cohen', age: 87,
     homeAddress: { city: 'Jerusalem', street: 'Hanegbi', country: 'Israel' },
     workAddress: { city: 'Eilat', street: 'Hamagen', country: 'Israel' },
-
+    moreAddresses:[
+      { city: 'Tel-aviv', street: 'Hamasger', country: 'Israel' },
+      { city: 'Elad', street: 'Haadmor-Hasheni', country: 'Israel' },
+    ]
   };
+
   readonly myForm = this.formBuilder.group({
     id: new FormControl<number>(-1),
     name: new FormControl<string>('', [Validators.required]),
@@ -36,6 +42,7 @@ export class ComponentsComponent implements OnInit {
     phones: new FormControl<string[]>([]),
     homeAddress: new FormControl<Address | null>(null),
     workAddress: new FormControl<Address | null>(null),
+    moreAddresses: new FormControl<Address[]>([])
   });
 
   constructor(private readonly formBuilder: FormBuilder) { }
